@@ -10,6 +10,10 @@ puts 'lancement du seed...'
 Dose.destroy_all
 Ingredient.destroy_all
 Cocktail.destroy_all
+User.destroy_all
+
+
+User.create!(email: "admin@gmail.com", password: "password")
 
 # Ingredient.create!(name: "lemon")
 # Ingredient.create!(name: "ice")

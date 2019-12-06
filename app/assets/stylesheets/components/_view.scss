@@ -1,0 +1,53 @@
+.body-view{
+    display: flex;
+    transition: all 1s ease-out;
+}
+
+
+.view{
+    background-color: $black;
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+    transition: all 1s ease-out;
+}
+
+.side{
+    background-color: $grey1;
+    height: 95vh;
+    top: 5vh;
+    width: 25px;
+    position: sticky;
+    transition: width 1s ease-out;
+    transition: all .3s ease-in;
+}
+
+.active{
+    width: 15%;
+}
+
+
+
+.side-btn {
+    height: 30px;
+    width: 30px;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: $white;
+}
+
+.side-btn:hover{
+    color: white;
+}
+
+
+@media screen and (max-width: 640px) {
+    .side {
+      width: 80vw;
+    }
+
+    .active{
+        width: 25px;
+    }
+  }
