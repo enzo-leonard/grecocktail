@@ -1,0 +1,13 @@
+.progress{
+  background-color: $grey-back-title;
+  width: 86%;
+  height: 8px;
+  top: 10vh;
+  margin: 16px;
+
+  .progress-bar {
+    background-color: $pink;
+  }
+
+  
+}
