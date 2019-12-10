@@ -11,6 +11,7 @@ class CocktailsController < ApplicationController
   # GET /cocktails/1
   # GET /cocktails/1.json
   def show
+    @cocktail.description = @cocktail.description.gsub(/\n/, "").strip
   end
 
   # GET /cocktails/new

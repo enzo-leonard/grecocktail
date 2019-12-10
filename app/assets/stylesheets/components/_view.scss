@@ -5,7 +5,6 @@
 
 
 .view{
-    background-color: $black;
     height: 100%;
     width: 60%;
     margin: 0 auto;
@@ -13,7 +12,7 @@
 }
 
 .side{
-    background-color: $grey1;
+    background-color: $grey-side;
     height: 95vh;
     top: 5vh;
     width: 25px;
@@ -26,8 +25,6 @@
     width: 15%;
 }
 
-
-
 .side-btn {
     height: 30px;
     width: 30px;
@@ -35,6 +32,8 @@
     text-align: center;
     cursor: pointer;
     color: $white;
+    position: sticky;
+    top: 5vh;
 }
 
 .side-btn:hover{
@@ -43,6 +42,10 @@
 
 
 @media screen and (max-width: 640px) {
+    .view{
+        margin: 0 10px;
+    }
+
     .side {
       width: 80vw;
     }

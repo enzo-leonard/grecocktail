@@ -9,9 +9,42 @@
 
     <div class="view">
 
-        <% @cocktails.each do |obj| %>
-            <p><%= obj.name %></p>
-        <% end %>
+    <div class="grid">
+    <%@cocktails.each do |item| %>
+        <div class="flip-card hidden">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                <div class="cocktail-card"
+                    style="background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= item.photo.present? ? item.photo : cl_image_path("vucs2ncsgrk6eo0iho2g") %>); background-size: cover; background-position-y: -286px;">
+                    <a><%= item.name %></a>
+                </div>
+                </div>
+                <div class="flip-card-back"
+                style="background-image : linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.9)),  url( <%= item.photo.present? ? item.photo : cl_image_path("vucs2ncsgrk6eo0iho2g") %>); background-size: cover;">
+                <div class="title"
+                    style="background-image : linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),  url( <%= item.photo.present? ? item.photo : cl_image_path("vucs2ncsgrk6eo0iho2g") %>); background-size: cover;">
+                    <img class="icon-title" src=<%= item.photo.present? ? item.photo : cl_image_path("vucs2ncsgrk6eo0iho2g") %>>
+                    <%= item.name %>
+                </div>
+                <div class="content">
+                    <% item.doses.each do |dose| %>
+                    <li>
+                    <%= dose.description %>
+                    </li>
+                    <%end %>
+                </div>
+                <div class="end">
+                    <%= link_to 'Voir le cocktail', cocktail_path(item), class: 'btn btn-primay' %>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <% end %>
+        </div>
+
+       
+    
         <%= link_to 'New Cocktail', new_cocktail_path %>
 
     </div>
