@@ -1,6 +1,6 @@
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :learn]
 
   # GET /cocktails
   # GET /cocktails.json
@@ -53,8 +53,7 @@ class CocktailsController < ApplicationController
     end
   end
 
-  # DELETE /cocktails/1
-  # DELETE /cocktails/1.json
+
   def destroy
     @cocktail.destroy
     respond_to do |format|
@@ -63,13 +62,16 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def learn 
+    @cocktail = Cocktail.first
+  end 
+
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_cocktail
       @cocktail = Cocktail.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def cocktail_params
       params.require(:cocktail).permit(:name, :photo, :description)
     end
