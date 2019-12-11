@@ -1,13 +1,11 @@
 const initView = () => {
     
-    const expandBtn = document.querySelector('.side-btn')
+    const expandBtn = document.querySelectorAll('.side-icon')
     
-    if (expandBtn){
+    if (document.querySelector('.side-icon')){
         const sideBar = document.querySelector('.side')
-        expandBtn.addEventListener('click', () => {
-            sideBar.classList.toggle('active')
-            console.log('hey there')
-        })
+        expandBtn.forEach(btn => btn.addEventListener('click', () => sideBar.classList.toggle('active')))
+      
     }
 
 }

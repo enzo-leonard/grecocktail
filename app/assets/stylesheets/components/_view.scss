@@ -12,17 +12,51 @@
 }
 
 .side{
-    background-color: $grey-side;
-    height: 95vh;
-    top: 5vh;
-    width: 25px;
+    
+    background-color: $grey-card;
+    height: 100vh;
+    top: 0vh;
+    width: 48px;
     position: sticky;
     transition: width 1s ease-out;
     transition: all .3s ease-in;
+    overflow: hidden;
+
+
+    .section {
+        h2{
+            display: flex;
+            color: $grey-title;
+            background-color: $grey-back-title;
+            padding: 8px;
+            font-size: 1.3em;
+            justify-content: space-between;
+        }
+        display: flex;
+
+        i{
+            padding: 8px 12px;
+            font-size: 24px;
+            height: 40px;
+            background-color: $grey-back-title;
+            color: $pink;
+            cursor: pointer;
+        }
+
+        select{
+            width: 100%;;
+        }
+    }
+
+    .inner-section{
+        padding: 0px 8px 0px 0px;
+
+        
+    }
 }
 
 .active{
-    width: 15%;
+    width: 20%;
 }
 
 .side-btn {
@@ -43,7 +77,7 @@
 
 @media screen and (max-width: 640px) {
     .view{
-        margin: 0 10px;
+        margin: 0 auto;    
     }
 
     .side {
@@ -51,6 +85,6 @@
     }
 
     .active{
-        width: 25px;
+        width: 48px;
     }
   }

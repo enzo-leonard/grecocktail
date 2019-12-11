@@ -9,20 +9,31 @@
     </div>
 
       <div class="dosages card">
-        <h2>Liste des ingredients </h2>
+        <h2>Liste des ingredients 
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+            +
+          </button>
+        </h2>
         <p>
           <% @cocktail.doses.each do |item|%>
-            <div class="ig-list"><%= item.description %> </div>
+            <div class="ig-list"><%= item.description %> 
+            <%= link_to  icon('fas', 'trash-alt') , @cocktail.id.to_s+'/doses/'+item.id.to_s, method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
           <% end %>
+          
         </p>
       </div>
     </div>
 
     <div class="column-2">
       <div class="description card">
-        <h2>Description</h2>
+        <h2>Description
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-description-modal">
+        edit
+      </button>
+        </h2>
         <p>
-          <%= @cocktail.description %>
+          <%= simple_format(@cocktail.description) %>
         </p>
       </div>
     </div>
@@ -43,6 +54,26 @@
         <%= simple_form_for [@cocktail, Dose.new] do |f| %>
           <%= f.input :description, placeholder: 'dosage + ingrédient ex : 2cl lait de coco' %>
           <%= f.association :ingredient %>
+          <%= f.submit "Ajouter", class: "btn btn-primary" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="edit-description-modal" tabindex="-1" role="dialog" aria-labelledby="edit-description-modal-Label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="edit-description-modal-Label">Description</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>w
+      <div class="modal-body">
+        <%= simple_form_for @cocktail do |f| %>
+          <%= f.input :description, as: :text, :input_html => {:rows => 15}, placeholder: 'Etape 1 :' %>
           <%= f.submit "Ajouter", class: "btn btn-primary" %>
         <% end %>
 

@@ -16,17 +16,36 @@
         justify-content: center;
 
         h2{
+            display: flex;
             color: $grey-title;
             background-color: $grey-back-title;
             padding: 8px;
             font-size: 1.3em;
+            justify-content: space-between;
         }
 
         .ig-list{
             //background-color: $grey-title;
             color: $grey-body;
             padding: 4px 16px;
+            display: flex;
+            justify-content: space-between;
+            
+
+            i{
+                opacity: 0.05;
+            }
+
+            &:hover {
+                background-color: $grey-back-title;
+                i {
+                    opacity: 1;
+                }
+
+              }
+            
         }
+        
 
         p{
             color: $grey-body;

@@ -2,6 +2,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+@import 'select2/dist/css/select2';
 
 
 // External libraries
@@ -15,8 +16,34 @@
 
 body{
     background-color: $black;
+    &::-webkit-scrollbar {
+        width: 20px;
+      }
+    
+      /* Track */
+      &::-webkit-scrollbar-track {
+        // box-shadow: inset 0 0 5px pink;
+        border-radius: 50px;
+        background: transparent;
+      }
+    
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: transparent;
+      }
+    
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: $green;
+        opacity: 0.2;
+        border-radius: 50px;
+      }
 }
 
 .hidden{
     display: none !important;
+}
+
+a:hover{
+  text-decoration: none;
 }

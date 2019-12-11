@@ -1,0 +1,14 @@
+.select2-selection{
+    background-color: $grey-card;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    background-color: $grey-back-title;
+    border: 2px solid grey;
+}
+
+
+.select2-container--default .select2-selection--multiple {
+    background-color: $grey-back-title;
+    border: none;
+}

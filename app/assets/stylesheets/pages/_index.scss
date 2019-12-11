@@ -1,0 +1,19 @@
+.result{
+    color: $grey-title;
+    font-size: 2em;
+    margin: 50px 70px 20px 0px;
+    display: flex;
+    justify-content: space-between;
+
+    a{
+        background-color: $grey-back-title;
+        border-radius: 5px;
+        display: flex;
+        padding: 0 16px;
+        align-items: flex-end;
+    }
+
+    .nb{
+
+    }
+}

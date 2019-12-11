@@ -6,12 +6,15 @@ class CocktailsController < ApplicationController
   # GET /cocktails.json
   def index
     @cocktails = Cocktail.all
+    @nb = @cocktails.count
+    @result = "Liste des cocktails"
+
   end
 
   # GET /cocktails/1
   # GET /cocktails/1.json
   def show
-    @cocktail.description = @cocktail.description.gsub(/\n/, "").strip
+  
   end
 
   # GET /cocktails/new
@@ -77,4 +80,6 @@ class CocktailsController < ApplicationController
     def cocktail_params
       params.require(:cocktail).permit(:name, :photo, :description)
     end
+
+   
 end

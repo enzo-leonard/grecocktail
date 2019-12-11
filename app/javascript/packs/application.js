@@ -10,14 +10,21 @@
 
 import "bootstrap";
 import initView from "../components/initView"
-import iniLearn from "../components/initLearn"
 import initLearn from "../components/initLearn";
+import { initSelect2 } from "../components/initSelect";
+
+
+
+
 
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM entièrement chargé et analysé");
     initView()
     initLearn()
+    initSelect2()
+
   });
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
