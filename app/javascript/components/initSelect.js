@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import 'select2';
-import { red } from 'ansi-colors';
 
 
 
