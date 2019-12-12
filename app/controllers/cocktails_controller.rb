@@ -2,16 +2,103 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show, :learn]
 
-  # GET /cocktails
-  # GET /cocktails.json
   def index
-    @cocktails = Cocktail.all
-    @nb = @cocktails.count
-    @result = "Liste des cocktails"
+
+
+    
+
+
+    
+  
+    if params[:query].present?
+    
+        param = params[:query]
+        sql = "ingredients.name ilike '%#{param}%' or cocktails.name ilike '%#{param}%'"
+        @cocktails = Cocktail.joins(:ingredients).where(sql).distinct()
+        @result = "Liste des cocktails avec : #{param} "
+    else
+       @cocktails = Cocktail.all.order(:id)
+       @result = "Liste de tous les cocktails"
+    end
+
+    if params[:get]
+      if params[:get][:ig]
+
+        list = []
+        params[:get][:ig].each { |id| list << id.to_i if id != "" }
+        array_name = []
+        list.each { |id| array_name << Ingredient.find(id).name }
+
+
+        # # on cherche tout les cocktails qui on élément qui n'est pas dans la liste 
+        # # pour chaque élement dans la liste on test si il n'est pas dans les doses
+        # sql = "doses.ingredient_id = #{list[0]} "
+
+        # list.each do |id|
+        #   sql += "or doses.ingredient_id != #{id} "
+       
+        # end
+
+        @all = Cocktail.all
+        @cocktails = []
+
+
+        
+
+        @all.each do |item|
+          
+          dosage = []
+
+          item.ingredients.each do |x|
+            dosage << x.id
+          end
+          
+          if dosage.count > 0
+
+       
+
+            
+            if in_list?(dosage, list)
+
+              
+              @cocktails << item 
+
+            end
+          end
+          
+
+          
+        end
+
+     
+
+
+        @result = "Liste de tous les cocktails qui n'a pas un des ingrédients suivants :  #{array_name}"
+        #@sql = sql
+     
+       
+        end
+
+    end
+
+
 
   end
 
-  # GET /cocktails/1
+  def in_list?(dosage, list) #test un des ingrédient de la liste n'est pas dans les dosages
+    dosage.each do |item| #test si tout les element font parti de la liste
+      puts "#{list} << #{item} #{list.include? item}" 
+      
+      unless list.include? item
+        return false #pas dans la liste
+      end
+    end
+    return true
+  end
+
+  
+
+  # query /cocktails/1
   # GET /cocktails/1.json
   def show
   

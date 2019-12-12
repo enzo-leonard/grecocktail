@@ -11,13 +11,13 @@
 
             
       
-        <%= simple_form_for cocktails_path do |f| %>
+         <%= form_tag cocktails_path, method: :get do %>
             <%= select('get', :ig , Ingredient.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, class: 'select2', multiple: 'multiple', data: { placeholder: "Ajouter un ingrédient" }) %>
 
             <hr>
-         
+        
+            <%= submit_tag "Recherche", class: "btn btn-primary" %>
 
-            <%= f.submit "Recherche", class: "btn btn-primary" %>
         
         <% end %>
         </div>
@@ -31,8 +31,9 @@
 
     <div class="view">
   
-
+    <%= @sql %>
     <div class="result">
+   
     <%= @result %>
     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#add-cocktail-modal">
     ajouter
