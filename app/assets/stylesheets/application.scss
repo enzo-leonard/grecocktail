@@ -1,49 +1,49 @@
-// Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
-@import 'select2/dist/css/select2';
+// // Graphical variables
+// @import "config/fonts";
+// @import "config/colors";
+// @import "config/bootstrap_variables";
+// @import 'select2/dist/css/select2';
 
 
-// External libraries
-@import "bootstrap/scss/bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
+// // External libraries
+// @import "bootstrap/scss/bootstrap";
+// @import "font-awesome-sprockets";
+// @import "font-awesome";
 
-// Your CSS partials
-@import "components/*";
-@import "pages/*";
+// // Your CSS partials
+// @import "components/*";
+// @import "pages/*";
 
-body{
-    background-color: $black;
-    &::-webkit-scrollbar {
-        width: 5px;
-      }
+// body{
+//     background-color: $black;
+//     &::-webkit-scrollbar {
+//         width: 5px;
+//       }
     
-      /* Track */
-      &::-webkit-scrollbar-track {
-        // box-shadow: inset 0 0 5px pink;
-        border-radius: 50px;
-        background: transparent;
-      }
+//       /* Track */
+//       &::-webkit-scrollbar-track {
+//         // box-shadow: inset 0 0 5px pink;
+//         border-radius: 50px;
+//         background: transparent;
+//       }
     
-      /* Handle */
-      &::-webkit-scrollbar-thumb {
-        background: transparent;
-      }
+//       /* Handle */
+//       &::-webkit-scrollbar-thumb {
+//         background: transparent;
+//       }
     
-      /* Handle on hover */
-      &::-webkit-scrollbar-thumb:hover {
-        background: $grey;
-        opacity: 0.2;
-        border-radius: 50px;
-      }
-}
+//       /* Handle on hover */
+//       &::-webkit-scrollbar-thumb:hover {
+//         background: $grey;
+//         opacity: 0.2;
+//         border-radius: 50px;
+//       }
+// }
 
-.hidden{
-    display: none !important;
-}
+// .hidden{
+//     display: none !important;
+// }
 
-a:hover{
-  text-decoration: none;
-}
+// a:hover{
+//   text-decoration: none;
+// }
