@@ -13,7 +13,25 @@
         align-items: flex-end;
     }
 
-    .nb{
+}
 
+
+@media screen and (max-width: 640px) {
+    .result{
+        color: $grey-title;
+        font-size: 1em;
+        margin: 20px 10px 20px 0px;
+        display: flex;
+        justify-content: space-between;
+    
+        button{
+            background-color: $grey-back-title;
+            border-radius: 5px;
+            display: flex;
+            padding: 0 16px;
+            align-items: flex-end;
+            height: 40px;
+        }
+    
     }
 }

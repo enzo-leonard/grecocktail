@@ -45,12 +45,18 @@
     <%@cocktails.each do |item| %>
         <div class="flip-card ">
             <div class="flip-card-inner">
+           
                 <div class="flip-card-front">
-                <div class="cocktail-card"
+               
+                <a href="/cocktails/<%= item.id%>" class="cocktail-card"
                     style="background-image : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= item.photo.present? ? item.photo : cl_image_path("vucs2ncsgrk6eo0iho2g") %>); background-size: cover;">
-                    <a><%= item.name %></a>
+                    
+                    <%= item.name %>
+                    
+                </a>
+               
                 </div>
-                </div>
+            
                 <div class="flip-card-back"
                 style="background-image : linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.9)),  url( <%= item.photo.present? ? item.photo : cl_image_path("vucs2ncsgrk6eo0iho2g") %>); background-size: cover;">
                 <div class="title"

@@ -49,13 +49,19 @@
     }
 
     .inner-section{
-        padding: 0px 8px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 100%;
 
         
     }
 }
 
 .active{
+    width: 20%;
+  
+}
+
+.passive{
     width: 20%;
 }
 
@@ -82,9 +88,13 @@
 
     .side {
       width: 80vw;
+      top: 10vh;
+      background-color: $grey-card;
     }
 
     .active{
         width: 48px;
+        background-color: transparent;
+        position: fixed;
     }
   }

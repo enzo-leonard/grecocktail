@@ -14,6 +14,9 @@ User.destroy_all
 
 
 User.create!(email: "admin@gmail.com", password: "password")
+User.create!(email: "notaras4@gmail.com", password: "password")
+User.create!(email: "enzoleonard@gmail.com", password: "password")
+User.create!(email: "antony@gmail.com", password: "password")
 
 # Ingredient.create!(name: "lemon")
 # Ingredient.create!(name: "ice")
@@ -116,9 +119,9 @@ def fetch_ingredient(link, cocktail)
 end
 
 fetch_cocktail(url)
-fetch_cocktail(url2)
-fetch_cocktail(url3)
-fetch_cocktail(url4)
+# fetch_cocktail(url2)
+# fetch_cocktail(url3)
+# fetch_cocktail(url4)
 
 
 
@@ -146,7 +149,8 @@ puts 'fin du seed'
 puts "--------\n"
 
 Ingredient.all.each { |item| puts item.name}
-Cocktail.all.each { |item| puts item.name}
+puts Ingredient.count()
+#Cocktail.all.each { |item| puts item.name}
 Dose.count
 
 

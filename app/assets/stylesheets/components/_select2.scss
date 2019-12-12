@@ -2,6 +2,14 @@
     background-color: $grey-card;
 }
 
+body > div.body-view > div.side > div > div > form > span{
+  width: 100% !important;
+}
+
+body > div.body-view > div.side > div > div > form > span > span.selection > span > ul > li > input {
+  width: 100% !important;
+}
+
 .select2-container--default.select2-container--focus .select2-selection--multiple {
     background-color: $grey-card;
     border: 2px solid $grey-card;
