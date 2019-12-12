@@ -9,7 +9,6 @@ gem 'puma'
 gem 'rails', '6.0.1'
 gem 'redis'
 gem 'sass-rails'
-gem 'compass-rails'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'

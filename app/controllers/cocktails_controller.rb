@@ -73,7 +73,8 @@ class CocktailsController < ApplicationController
      
 
 
-        @result = "Liste de tous les cocktails qui n'a pas un des ingrédients suivants :  #{array_name}"
+        @result = "Liste des cocktails trouvés"
+        @result = "Vous n'avez pas assez d'ingrédients pour faire un cocktail 😢" if @cocktails.count == 0
         #@sql = sql
      
        
