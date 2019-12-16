@@ -1478,7 +1478,7 @@ figcaption {
   border-width: 2px;
   border-color: #2e2f38;
   border-radius: 5px;
-  background-color: #21222b;
+  background-color: #343740;
   color: #21222b;
 }
 
@@ -1559,6 +1559,7 @@ figcaption {
 .close {
   background-color: transparent;
   font-family: 'Fa solid 900', sans-serif;
+  font-size: 16px;
 }
 
 .ig-list {
@@ -2385,7 +2386,7 @@ figcaption {
   .modal {
     position: fixed;
     left: 1%;
-    top: 94%;
+    top: 99%;
     right: 1%;
     bottom: 1%;
     display: block !important;
@@ -2393,9 +2394,7 @@ figcaption {
     z-index: auto;
     overflow: visible;
     height: 90vh;
-    background-color: #21222b;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5)));
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-color: #343740;
   }
   .modal.frigo {
    //@debug top: 94%;
@@ -2451,9 +2450,7 @@ figcaption {
     position: sticky;
     top: 67px;
     z-index: 3;
-    width: 110%;
-    margin-right: -28px;
-    margin-left: -11px;
+    width: 100%;
   }
   .banner {
     height: 200px;
@@ -2507,6 +2504,7 @@ figcaption {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    justify-content: space-around;
     width: 100%;
     height: 50px;
     background-color: #353740;

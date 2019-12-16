@@ -1,7 +1,7 @@
 const initModal = () => {
 
     const cards =  document.querySelectorAll('.cocktail-card')
-    const frigoBtn =  document.querySelector('.frigo-btn')
+    const frigoBtn =  document.querySelectorAll('.frigo-btn')
     console.log(cards.length)
 
     cards.forEach((card) => {
@@ -11,7 +11,9 @@ const initModal = () => {
         })
     })
 
-    frigoBtn.addEventListener('click', () => modalAppear('frigo'))
+    frigoBtn.forEach((btn) => {
+        btn.addEventListener('click', () => modalAppear('frigo'))
+    })
 
     const modalAppear = (id) => {
         id = "#modal_"+id
@@ -19,7 +21,11 @@ const initModal = () => {
         const dismiss = modal.querySelector('.close.w-button') 
         console.log(dismiss)
         modal.classList.toggle('appear')
-        dismiss.addEventListener('click', () => modal.classList.toggle('appear') )
+        dismiss.addEventListener('click', () => {
+            console.log('close!')
+            console.log(modal.classList)
+            modal.classList.remove('appear') 
+        })
     }
 
 }

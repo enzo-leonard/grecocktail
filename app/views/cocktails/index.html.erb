@@ -13,7 +13,7 @@
   </a>
 </div>
 </div>
-<div class="menu-box"><a href="#" class="menu-item w-button"><strong></strong> </a><a href="#" class="menu-item active w-button"><strong></strong></a><a href="#" class="menu-item w-button"><strong></strong></a></div>
+<div class="menu-box"><a href="#" class="menu-item w-button frigo-btn"><strong></strong> </a><a href="#" class="menu-item active w-button"><strong></strong></a><a href="#" class="menu-item w-button"><strong></strong></a></div>
 <div class="banner">
 <div class="container w-container">
   <div class="h1">Become a cocktail&#x27;s <strong class="bold-text-4">Master</strong></div>
@@ -24,7 +24,7 @@
 <div class="div-block-5"><a href="#" class="action w-button frigo-btn">Rechercher avec mes ingrédients</a></div>
 <div class="search-box">
   <div class="form-block w-form">
-  <%= form_tag cocktails_path, method: :get do %>
+  <%= form_tag cocktails_path, class: "w-100", method: :get do %>
     <%= text_field_tag :query,
     params[:query], class: "search-field", placeholder: "Rechercher"%>
     <button type="submit" class="search-button"><i class="fa fa-search"> </i></button>
@@ -109,12 +109,14 @@
 <div class="modal-inner">
   <div class="colone">
     <div class="card _100">
-      <div class="card-inner">
+      <div class="container-selector">
       <%= form_tag cocktails_path, method: :get do %>
         <%= select('get', :ig , Ingredient.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, class: 'select2', multiple: 'multiple', data: { placeholder: "Ajouter un ingrédient" }) %>
         <hr>
+        <div class="container-submit">
         <%= submit_tag "Recherche", class: "btn btn-primary" %>
-    <% end %>
+        </div>
+        <% end %>
       </div>
     </div>
 </div>

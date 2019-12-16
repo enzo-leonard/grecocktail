@@ -70,6 +70,15 @@ body > div.body-view > div.side > div > div > form > span > span.selection > spa
     padding: 8px;
 }
 
+.container-select{
+  max-height: 50vh;
+}
+
+.container-submit{
+  display: flex;
+  justify-content: center;
+}
+
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     color: $grey-back-title;
     cursor: pointer;

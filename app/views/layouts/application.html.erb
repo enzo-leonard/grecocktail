@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Grecocktail</title>
-    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
-    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable"  content="yes">
     <%= csrf_meta_tags %>
@@ -13,11 +12,13 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-    <html data-wf-page="5df516716a31d57fb038d941" data-wf-site="5df516716a31d5c10938d933"></html>
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
     <%#= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+
  
 
     <%= yield %>
