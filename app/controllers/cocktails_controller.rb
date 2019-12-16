@@ -2,6 +2,13 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show, :learn]
 
+  def test
+
+    @cocktails = Cocktail.all.order(:id)
+    @result = "Liste de tous les cocktails"
+    render 'test'
+  end
+
   def index
 
 

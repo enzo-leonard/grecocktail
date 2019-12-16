@@ -10,9 +10,9 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Your CSS partials
+// Your CSS partials @import "pages/";
 @import "components/*";
-@import "pages/*";
+
 
 body{
     background-color: $black;
@@ -37,6 +37,16 @@ body{
         background: $grey;
         opacity: 0.2;
         border-radius: 50px;
+      }
+
+      .modal {
+        display: block !important;
+        width: auto !important;
+        z-index: 4;
+        transition-property: top;
+        transition-duration: 0.2s;
+        background-color: $grey-card;
+        
       }
 }
 

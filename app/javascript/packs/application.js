@@ -9,20 +9,23 @@
 // require("channels")
 
 import "bootstrap";
+
 import initView from "../components/initView"
 import initLearn from "../components/initLearn";
 import { initSelect2 } from "../components/initSelect";
-
+import initModal from '../components/initModal';
+import "./initFlow"
 
 
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
+  
     console.log("DOM entièrement chargé et analysé");
     initView()
     initLearn()
     initSelect2()
-
+    initModal()
   });
 
 

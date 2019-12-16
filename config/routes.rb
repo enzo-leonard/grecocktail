@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   end 
   root to: 'cocktails#index'
   get '/learn', to: 'cocktails#learn'
+  get '/test', to: 'cocktails#test'
   devise_for :users
 end
